@@ -68,7 +68,53 @@ Evaluasi model dilakukan untuk mengetahui performa masing-masing model dalam men
 - **Grafik training dan validation**
 - **Confusion Matrix**
 - **Classification Report** (precision, recall, dan f1-score)
+Evaluasi model dilakukan untuk mengukur performa masing-masing model dalam mengklasifikasikan citra pose yoga. Evaluasi mencakup grafik pelatihan (training & validation) serta confusion matrix.
 
+### 🔹 CNN (Non-Pretrained)
+
+<p align="center">
+  <img src="assets/grafik-plot%20CNN.png" width="600"/>
+  <br>
+  <em>Gambar 1. Grafik training dan validation model CNN</em>
+</p>
+
+<p align="center">
+  <img src="assets/matrix%20CNN.png" width="500"/>
+  <br>
+  <em>Gambar 2. Confusion matrix model CNN</em>
+</p>
+
+---
+
+### 🔹 MobileNetV2 (Pretrained)
+
+<p align="center">
+  <img src="assets/grafik-plot%20MobileNet.png" width="600"/>
+  <br>
+  <em>Gambar 3. Grafik training dan validation model MobileNetV2</em>
+</p>
+
+<p align="center">
+  <img src="assets/matrix%20MobileNet.png" width="500"/>
+  <br>
+  <em>Gambar 4. Confusion matrix model MobileNetV2</em>
+</p>
+
+---
+
+### 🔹 ResNet101 (Pretrained)
+
+<p align="center">
+  <img src="assets/grafik-plot%20resnet.png" width="600"/>
+  <br>
+  <em>Gambar 5. Grafik training dan validation model ResNet101</em>
+</p>
+
+<p align="center">
+  <img src="assets/matrix%20resnet.png" width="500"/>
+  <br>
+  <em>Gambar 6. Confusion matrix model ResNet101</em>
+</p>
 ---
 
 ## 🔍 Perbandingan Performa Model
