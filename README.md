@@ -222,8 +222,8 @@ Cara Menggunakan Website
   - Hasil prediksi kelas pose yoga
   - Probabilitas Top-5 kelas
 
-```bash 
 ### 6. Menghentikan Program
+```bash 
 # Tekan CTRL + C pada terminal untuk menghentikan aplikasi Streamlit
 ````
 
