@@ -1,3 +1,16 @@
+---
+
+## KLASIFIKASI DATA CITRA 
+Perbandingan hasil prediksi menggunakan model CNN, MobileNetV2, dan ResNet101 pada Klasifikasi Gambar Pose Yoga.
+
+---
+
+## DESKRIPSI PROJECT 
+Proyek ini bertujuan untuk melakukan klasifikasi data citra pose yoga menggunakan beberapa model deep learning untuk mengenali berbagai jenis pose yoga dari gambar. Dataset yang digunakan diambil dari Kaggle dan terdiri dari 5.991 gambar dengan 107 kelas pose yoga yang berbeda. Setiap kelas memiliki jumlah gambar yang bervariasi, sehingga distribusi data bersifat tidak seimbang.
+Pada penelitian ini digunakan tiga model klasifikasi citra, yaitu:
+1.	Non-pretrained (CNN), yaitu model CNN yang dibuat dan dilatih dari awal tanpa menggunakan bobot awal (pretrained).
+2.	Pretrained 1 – MobileNetV2, yaitu model CNN yang sudah pernah dilatih sebelumnya pada dataset besar, sehingga mampu mengenali pola dasar pada gambar. Model ini bersifat ringan dan cepat, lalu disesuaikan kembali untuk mengenali pose yoga.
+3.	Pretrained 2 – ResNet101, yaitu model CNN yang sudah dilatih sebelumnya dengan struktur jaringan yang lebih dalam. Model ini mampu menangkap fitur gambar yang lebih kompleks, sehingga diharapkan memberikan hasil klasifikasi yang lebih baik.
 
 ---
 
@@ -6,8 +19,11 @@ Dataset pose yoga diperoleh dari **Kaggle** dan memiliki karakteristik sebagai b
 - Total gambar: **5.991**
 - Jumlah kelas: **107 pose yoga**
 - Distribusi data antar kelas **tidak seimbang**
+  
+Dataset yang digunakan diambil dari [Kaggle](https://www.kaggle.com/datasets/shrutisaxena/yoga-pose-image-classification-dataset)
 
-Contoh 10 kelas pertama pada dataset:
+Pada dataset ini, terdapat perbedaan jumlah data antar kelas menunjukkan bahwa dataset memiliki distribusi yang tidak seimbang (imbalanced), yang berpotensi memengaruhi performa model dalam mengenali kelas dengan jumlah data yang lebih sedikit.
+Berikut Contoh 10 kelas pertama pada dataset:
 
 | No | Nama Pose Yoga             | Jumlah Gambar |
 |----|----------------------------|---------------|
@@ -27,6 +43,7 @@ Ketidakseimbangan data ini dapat memengaruhi performa model, khususnya pada kela
 ---
 
 ## ⚙️ Preprocessing Data
+Sebelum digunakan untuk melatih model, data citra akan melakukan tahap pra-pemrosesan (preprocessing). Tahap ini dilakukan untuk menyamakan ukuran gambar, memperbaiki kualitas data, serta membantu model agar dapat mengenali pola pose yoga dengan lebih baik.
 Tahapan preprocessing dilakukan untuk meningkatkan kualitas data dan performa model, meliputi:
 
 1. **Resize Gambar**  
@@ -42,11 +59,12 @@ Tahapan preprocessing dilakukan untuk meningkatkan kualitas data dan performa mo
    - Zoom
 
 4. **Pembagian Dataset**  
-   Dataset dibagi menjadi data **training**, **validation**, dan **testing**.
+   Dataset dibagi menjadi data **training**, **validation**, dan **testing**. Pembagian ini dilakukan untuk melatih model serta mengevaluasi performa model secara objektif.
 
 ---
 
 ## 🧠 Model yang Digunakan
+Terdapat tiga model yang digunakan untuk melakukan klasifikasi citra pose yoga. Ketiga model tersebut terdiri dari satu model Non-Pretrained, yaitu CNN, serta dua model Pretrained, yaitu MobileNetV2 dan ResNet101. Setiap model dilatih dan dievaluasi dengan menampilkan hasil berupa Akurasi, Grafik, Confusion Matrix, dan Classification Report. Setelah proses pelatihan selesai, model disimpan dari Google Colab agar dapat digunakan kembali pada aplikasi Streamlit sebagai dashboard interaktif.
 Tiga model deep learning digunakan dan dibandingkan dalam proyek ini:
 
 ### 1️⃣ CNN (Non-Pretrained)
@@ -62,13 +80,23 @@ Setelah pelatihan selesai, masing-masing model disimpan agar dapat digunakan kem
 
 ---
 
+## ALUR DASHBOARD WEB
+Aplikasi dashboard web ini digunakan untuk melakukan proses prediksi pose yoga secara interaktif dan real-time. Tanpa perlu melakukan training ulang, model dapat langsung dipilih, gambar diunggah, serta hasil prediksi beserta gambar yang diupload dapat langsung dilihat.
+Berikut adalah langkah-langkah dalam menggunakan dashboard web:
+1.	Menampilkan model klasifikasi citra beserta implementasi masing-masing model yang tertera pada halaman beranda (home), yaitu CNN, MobileNetV2, dan ResNet101.
+2.	Memilih model yang ingin digunakan untuk melakukan prediksi.
+3.	Mengunggah gambar, kemudian gambar yang dipilih akan tampil pada halaman dashboard sebagai preview.
+4.	Model melakukan prediksi berdasarkan gambar tersebut, serta menampilkan akurasi dan probabilitas top 5 untuk setiap gambar.
+5.	Setelah prediksi selesai, dapat kembali ke halaman beranda dan memilih model lain untuk melakukan proses prediksi selanjutnya.
+
+---
 ## 📈 Evaluasi Model
-Evaluasi model dilakukan untuk mengetahui performa masing-masing model dalam mengklasifikasikan citra pose yoga. Metrik evaluasi yang digunakan meliputi:
-- **Akurasi**
-- **Grafik training dan validation**
-- **Confusion Matrix**
-- **Classification Report** (precision, recall, dan f1-score)
-Evaluasi model dilakukan untuk mengukur performa masing-masing model dalam mengklasifikasikan citra pose yoga. Evaluasi mencakup grafik pelatihan (training & validation) serta confusion matrix.
+Evaluasi model dilakukan untuk mengetahui kemampuan dari masing-masing model dalam melakukan klasifikasi citra pose yoga. Proses evaluasi ini bertujuan untuk membandingkan performa model CNN, MobileNetV2, dan ResNet101 berdasarkan hasil prediksi yang dihasilkan. Metrik evaluasi yang digunakan meliputi:
+- **Akurasi** : Mengukur tingkat ketepatan model dalam mengklasifikasikan gambar.
+- **Grafik training dan validation** : Melihat proses pembelajaran model selama pelatihan.
+- **Confusion Matrix** : Mengetahui kesalahan prediksi antar kelas.
+- **Classification Report** : Melihat nilai precision, recall, dan f1-score pada setiap kelas.
+Evaluasi model dilakukan untuk mengukur performa masing-masing model dalam mengklasifikasikan citra pose yoga. Hasil evaluasi dari ketiga model kemudian dibandingkan untuk mengetahui model mana yang memberikan performa terbaik dalam mengenali pose yoga.
 
 ### 🔹 CNN (Non-Pretrained)
 
@@ -128,7 +156,8 @@ Evaluasi model dilakukan untuk mengukur performa masing-masing model dalam mengk
 ---
 
 ## 🖼️ Hasil Prediksi Model
-Pengujian dilakukan melalui dashboard Streamlit menggunakan citra pose yoga untuk melihat kemampuan model dalam melakukan prediksi kelas pose yoga.
+Setelah proses pelatihan dan evaluasi selesai, masing-masing model diuji menggunakan citra pose yoga yang diambil dari folder dataset. Pengujian ini bertujuan untuk melihat kemampuan model dalam memprediksi kelas pose yoga. Hasil prediksi ditampilkan melalui dashboard berbasis Streamlit untuk melihat apakah model dapat menebak pose yoga dengan benar. 
+Berikut ini ditampilkan contoh hasil prediksi dari ketiga model yang digunakan:
 
 ### 🔹 CNN (Non-Pretrained)
 
@@ -138,7 +167,7 @@ Pengujian dilakukan melalui dashboard Streamlit menggunakan citra pose yoga untu
   <em>Gambar 7. Contoh hasil prediksi pose yoga menggunakan model CNN</em>
 </p>
 
-Model menghasilkan tingkat kepercayaan prediksi sebesar **71,99%** dan **83,28%**.
+Model berhasil memprediksi pose dengan benar menggunakan model CNN, dengan akurasi masing-masing sebesar **71,99%** dan **83,28%**.
 
 ---
 
@@ -150,7 +179,7 @@ Model menghasilkan tingkat kepercayaan prediksi sebesar **71,99%** dan **83,28%*
   <em>Gambar 8. Contoh hasil prediksi pose yoga menggunakan model MobileNetV2</em>
 </p>
 
-Model memberikan hasil prediksi paling konsisten dengan tingkat kepercayaan **82,71%** dan **99,60%**.
+Model berhasil memprediksi pose dengan benar menggunakan model MobileNetV2, dengan akurasi masing-masing sebesar **82,71%** dan **99,60%**.
 
 ---
 
@@ -162,7 +191,7 @@ Model memberikan hasil prediksi paling konsisten dengan tingkat kepercayaan **82
   <em>Gambar 9. Contoh hasil prediksi pose yoga menggunakan model ResNet101</em>
 </p>
 
-Model menghasilkan tingkat kepercayaan prediksi sebesar **92,52%** dan **71,94%**.
+Model berhasil memprediksi pose dengan benar menggunakan model ResNet101, dengan akurasi masing-masing sebesar **92,52%** dan **71,94%**.
 
 ---
 
