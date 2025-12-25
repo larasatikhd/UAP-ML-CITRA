@@ -216,7 +216,7 @@ Sehingga, secara keseluruhan, hasil ini menegaskan bahwa **MobileNetV2** memberi
 
 ## PANDUAN MENJALANKAN WEB SECARA LOKAL
 
-Ikuti langkah-langkah berikut secara berurutan:
+Berikut langkah-langkah untuk menjalankan web secara lokal:
 
 ### 1. Clone repository
 ```bash
