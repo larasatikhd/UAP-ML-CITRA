@@ -218,8 +218,8 @@ Ikuti langkah-langkah berikut secara berurutan:
 
 ### 1. Clone repository
 ```bash
-git clone https://github.com/username/uap-yogas-pose.git
-cd uap-yogas-pose
+git clone https://github.com/larasatikhd/UAP-ML.git
+cd UAP-ML
 ```
 
 ### 2. Install PDM (Python Dependency Manager)
