@@ -1,11 +1,11 @@
 ---
 
-## KLASIFIKASI DATA CITRA 
+## Klasifikasi Data Citra 
 Perbandingan hasil prediksi menggunakan model CNN, MobileNetV2, dan ResNet101 pada Klasifikasi Gambar Pose Yoga.
 
 ---
 
-## DESKRIPSI PROJECT 
+## Deskripsi Project
 Proyek ini bertujuan untuk melakukan klasifikasi data citra pose yoga menggunakan beberapa model deep learning untuk mengenali berbagai jenis pose yoga dari gambar. Dataset yang digunakan diambil dari Kaggle dan terdiri dari 5.991 gambar dengan 107 kelas pose yoga yang berbeda. Setiap kelas memiliki jumlah gambar yang bervariasi, sehingga distribusi data bersifat tidak seimbang.
 
 Pada penelitian ini digunakan tiga model klasifikasi citra, yaitu:
@@ -81,7 +81,7 @@ Setelah pelatihan selesai, masing-masing model disimpan agar dapat digunakan kem
 
 ---
 
-## ALUR DASHBOARD WEB
+## Alur Dashboard Web
 Aplikasi dashboard web ini digunakan untuk melakukan proses prediksi pose yoga secara interaktif dan real-time. Tanpa perlu melakukan training ulang, model dapat langsung dipilih, gambar diunggah, serta hasil prediksi beserta gambar yang diupload dapat langsung dilihat.
 
 Berikut adalah langkah-langkah dalam menggunakan dashboard web:
@@ -160,7 +160,7 @@ Evaluasi model dilakukan untuk mengukur performa masing-masing model dalam mengk
 
 ---
 
-## 🖼️ Hasil Prediksi Model
+## Hasil Prediksi Model
 Setelah proses pelatihan dan evaluasi selesai, masing-masing model diuji menggunakan citra pose yoga yang diambil dari folder dataset. Pengujian ini bertujuan untuk melihat kemampuan model dalam memprediksi kelas pose yoga. Hasil prediksi ditampilkan melalui dashboard berbasis Streamlit untuk melihat apakah model dapat menebak pose yoga dengan benar. 
 Berikut ini ditampilkan contoh hasil prediksi dari ketiga model yang digunakan:
 
@@ -266,7 +266,7 @@ Cara Menggunakan Website
 # Tekan CTRL + C pada terminal untuk menghentikan aplikasi Streamlit
 ````
 
-Catatan Penting:
+### Catatan Penting:
 1. Notebook hanya dijalankan sekali untuk training.
 2. File model disimpan dan digunakan kembali oleh website.
 3. Website hanya melakukan inference (prediksi).
