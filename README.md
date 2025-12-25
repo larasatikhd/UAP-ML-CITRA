@@ -19,6 +19,7 @@ Pada penelitian ini digunakan tiga model klasifikasi citra, yaitu:
 Dataset yang digunakan diambil dari [Kaggle](https://www.kaggle.com/datasets/shrutisaxena/yoga-pose-image-classification-dataset), yaitu Yoga Pose Image Classification Dataset, yang berisi kumpulan citra pose yoga dalam format gambar. Dataset ini terdiri dari beberapa folder, di mana setiap folder merepresentasikan satu kelas pose yoga dan berisi gambar-gambar pose tersebut. Secara keseluruhan, dataset terdiri dari 107 kelas pose yoga dengan total 5.991 gambar, dengan jumlah gambar pada setiap kelas yang bervariasi.
 
 Pada dataset ini, terdapat perbedaan jumlah data antar kelas menunjukkan bahwa dataset memiliki distribusi yang tidak seimbang (imbalanced), yang berpotensi memengaruhi performa model dalam mengenali kelas dengan jumlah data yang lebih sedikit.
+
 Berikut Contoh 10 kelas pertama pada dataset:
 
 | No | Nama Pose Yoga             | Jumlah Gambar |
