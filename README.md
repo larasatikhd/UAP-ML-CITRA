@@ -35,7 +35,7 @@ Berikut Contoh 10 kelas pertama pada dataset:
 | 9  | ardha matsyendrasana        | 90            |
 | 10 | ardha pincha mayurasana     | 47            |
 
-Ketidakseimbangan data ini dapat memengaruhi performa model, khususnya pada kelas dengan jumlah data yang sedikit.
+Perbedaan jumlah gambar pada setiap kelas pose yoga tersebut menunjukkan bahwa dataset memiliki variasi dan ketidak seimbangan data yang cukup jelas. Hal ini dapat menyebabkan model cenderung lebih baik dalam mengenali kelas dengan jumlah data yang lebih banyak dibandingkan kelas dengan jumlah data yang sedikit.
 
 ---
 
@@ -65,21 +65,19 @@ Terdapat tiga model yang digunakan untuk melakukan klasifikasi citra pose yoga. 
 
 Tiga model deep learning digunakan dan dibandingkan dalam proyek ini:
 
-### CNN (Non-Pretrained)
+### 1. CNN (Non-Pretrained)
 Model CNN yang dibuat dan dilatih dari awal tanpa adanya model lain. Model ini belajar mengenali pose yoga langsung dari gambar yang ada di dataset, mulai dari pola sederhana hingga pola yang lebih rumit.
 
-### MobileNetV2 (Pretrained)
+### 2. MobileNetV2 (Pretrained)
 Model CNN yang sudah dilatih sebelumnya menggunakan dataset besar. Model ini dapat mengenali pola dasar pada gambar, sehingga proses pelatihannya menjadi lebih cepat. MobileNetV2 digunakan kembali dan disesuaikan untuk mengenali pose yoga sesuai dengan jumlah kelas yang digunakan.
 
-### ResNet101 (Pretrained)
+### 3. ResNet101 (Pretrained)
 Model CNN dengan struktur yang lebih dalam. Model ini juga sudah dilatih sebelumnya dan mampu mengenali fitur gambar yang lebih kompleks. Dengan kemampuan tersebut, ResNet101 diharapkan dapat memberikan hasil klasifikasi pose yoga yang lebih baik.
-
-Setelah pelatihan selesai, masing-masing model disimpan agar dapat digunakan kembali pada aplikasi web tanpa training ulang.
 
 ---
 
 ## ALUR DASHBOARD WEB
-Aplikasi dashboard web ini digunakan untuk melakukan proses prediksi pose yoga secara interaktif dan real-time. Tanpa perlu melakukan training ulang, model dapat langsung dipilih, gambar diunggah, serta hasil prediksi beserta gambar yang diupload dapat langsung dilihat.
+Dashboard web ini digunakan untuk melakukan proses prediksi pose yoga secara interaktif dan real-time. Tanpa perlu melakukan training ulang, model dapat langsung dipilih, gambar diunggah, serta hasil prediksi beserta gambar yang diupload dapat langsung dilihat.
 
 Berikut adalah langkah-langkah dalam menggunakan dashboard web:
 1.	Menampilkan model klasifikasi citra beserta implementasi masing-masing model yang tertera pada halaman beranda (home), yaitu CNN, MobileNetV2, dan ResNet101.
@@ -93,13 +91,17 @@ Berikut adalah langkah-langkah dalam menggunakan dashboard web:
 Evaluasi model dilakukan untuk mengetahui kemampuan dari masing-masing model dalam melakukan klasifikasi citra pose yoga. Proses evaluasi ini bertujuan untuk membandingkan performa model CNN, MobileNetV2, dan ResNet101 berdasarkan hasil prediksi yang dihasilkan. 
 
 Pada tahap evaluasi, beberapa metrik yang digunakan antara lain:
+
 - **Akurasi** : Mengukur tingkat ketepatan model dalam mengklasifikasikan gambar.
 - **Grafik training dan validation** : Melihat proses pembelajaran model selama pelatihan.
 - **Confusion Matrix** : Mengetahui kesalahan prediksi antar kelas.
 - **Classification Report** : Melihat nilai precision, recall, dan f1-score pada setiap kelas.
-Evaluasi model dilakukan untuk mengukur performa masing-masing model dalam mengklasifikasikan citra pose yoga. Hasil evaluasi dari ketiga model kemudian dibandingkan untuk mengetahui model mana yang memberikan performa terbaik dalam mengenali pose yoga.
+  
+Evaluasi model dilakukan untuk mengukur performa masing-masing model dalam mengklasifikasikan citra pose yoga. Hasil evaluasi dari ketiga model kemudian dibandingkan untuk mengetahui model mana yang memberikan performa terbaik dalam mengenali pose yoga. 
 
-### 🔹 CNN (Non-Pretrained)
+Berikutnya terdapat visualisasi hasil evaluasi dari masing-masing model. Visualisasi yang ditampilkan berupa grafik training dan validation untuk melihat proses pembelajaran model, serta confusion matrix untuk mengetahui kesalahan prediksi antar kelas pose yoga.
+
+### 1. CNN (Non-Pretrained)
 
 <p align="center">
   <img src="assets/grafik-plot%20CNN.png" width="600"/>
@@ -115,7 +117,7 @@ Evaluasi model dilakukan untuk mengukur performa masing-masing model dalam mengk
 
 ---
 
-### 🔹 MobileNetV2 (Pretrained)
+### 2. MobileNetV2 (Pretrained)
 
 <p align="center">
   <img src="assets/grafik-plot%20MobileNet.png" width="600"/>
@@ -131,7 +133,7 @@ Evaluasi model dilakukan untuk mengukur performa masing-masing model dalam mengk
 
 ---
 
-### 🔹 ResNet101 (Pretrained)
+### 3. ResNet101 (Pretrained)
 
 <p align="center">
   <img src="assets/grafik-plot%20resnet.png" width="600"/>
